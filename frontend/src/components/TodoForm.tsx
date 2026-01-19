@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { createTodo } from '../app/api';
+import { createTodo } from '@/app/api';
 
 const TodoForm = () => {
   const [title, setTitle] = useState('');

@@ -2,7 +2,8 @@
 
 import { useEffect, useState } from "react";
 import { getTodos } from "./api";
-import TodoForm from "../components/TodoForm";
+import TodoForm from "@/components/TodoForm";
+import TodoList from "@/components/TodoList";
 
 type Todo = {
   id: number;
@@ -21,7 +22,7 @@ export default function Home() {
         const todosData = await getTodos();
         setTodos(todosData);
       } catch (error) {
-        console.error('Error while fetching todos:', error);
+        console.error(error);
       }
     };
 
@@ -32,11 +33,7 @@ export default function Home() {
     <div className="container">
       <h1>ToDo List</h1>
       <TodoForm />
-      <ul>
-        {todos.map((todo: any) => (
-          <li key={todo.id}>{todo.title}</li>
-        ))}
-      </ul>
+      <TodoList todos={todos} />
     </div>
   );
 }
