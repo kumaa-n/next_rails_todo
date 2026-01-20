@@ -108,8 +108,23 @@ li {
   cursor: pointer;
 }
 
+.delete-button {
+  background-color: #f44336;
+  color: #fff;
+  border: none;
+  padding: 1px 10px;
+  border-radius: 3px;
+  cursor: pointer;
+}
+
 .todo-item {
   margin-bottom: 10px;
   padding-bottom: 10px;
   border-bottom: 1px solid #ccc;
+}
+
+.todo-item-buttons {
+  margin-top: 5px;
+  display: flex;
+  gap: 10px;
 }
