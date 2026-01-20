@@ -29,11 +29,19 @@ export default function Home() {
     fetchTodos();
   }, []);
 
+  const handleTodoDelete = async (todoId: number) => {
+    try {
+      setTodos((prevTodos) => prevTodos.filter((todo) => todo.id !== todoId));
+    } catch (error) {
+      console.error(error);
+    }
+  };
+
   return (
     <div className="container">
       <h1>ToDo List</h1>
       <TodoForm />
-      <TodoList todos={todos} />
+      <TodoList todos={todos} onTodoDelete={handleTodoDelete} />
     </div>
   );
 }
