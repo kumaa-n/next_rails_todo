@@ -42,5 +42,5 @@ group :development, :test do
   gem "dotenv-rails"
 
   # Fix minitest version for Rails 7.2 compatibility
-  gem "minitest", "~> 5.0"
+  gem "minitest", "~> 6.0"
 end
